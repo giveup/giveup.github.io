@@ -1,0 +1,90 @@
+<!--TODO:需要参考 https://zh.wikipedia.org/wiki/中华人民共和国国旗 使之更符合标准-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Flag</title>
+    <style>
+        .flag {
+            margin: 100px auto 200px auto;
+            height: 533px;
+            width: 800px;
+            background-color: #de2910;
+            box-shadow: 4px 4px 4px 2px #a28787;
+        }
+
+        .five-star {
+            height: 0px;
+            width: 0px;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-top: 70px solid #ffde00;
+            transform: rotate(215deg);
+        }
+
+        .five-star::before {
+            height: 0px;
+            width: 0px;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-top: 70px solid #ffde10;
+            transform: rotate(290deg);
+            display: block;
+            content: "";
+            margin-top: -70px;
+            margin-left: -99px;
+        }
+
+        .five-star::after {
+            height: 0px;
+            width: 0px;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-top: 70px solid #ffde10;
+            transform: rotate(75deg);
+            /*必须转换为块元素,否则transform无效*/
+            /*chrome下不转换块元素会出错,伪类元素大小和原来的元素大小不一致*/
+            display: block;
+            /*占位用*/
+            content: "";
+            margin-left: -105px;
+            margin-top: -72px;
+        }
+
+        /*选择第二个div*/
+        div:nth-of-type(2) {
+            margin-top: -576px;
+            margin-left: 130px;
+        }
+
+        /*属性选择器,选择第三个div*/
+        div[id*=second-star] {
+            /*translate和scale有先后顺序区别*/
+            transform: translate(290px, -189px) scale(0.2, 0.2) rotate(23deg);
+        }
+
+        /*class选择器,选择第四个div*/
+        .third-star {
+            transform: translate(330px, -179px) scale(0.2, 0.2) rotate(45deg);
+        }
+
+        /*id选择器无效,还是使用class选择器*/
+        .fourth-star {
+            transform: translate(330px, -169px) scale(0.2, 0.2) rotate(69deg);
+        }
+
+        /*选择最后一个,即第6个div*/
+        div:last-of-type {
+            transform: translate(290px, -159px) scale(0.2, 0.2) rotate(20deg);
+        }
+    </style>
+</head>
+<body>
+<div class="flag"></div>
+<div class="five-star"></div>
+<div class="five-star" id="second-star"></div>
+<div class="five-star third-star"></div>
+<div class="five-star fourth-star"></div>
+<div class="five-star"></div>
+</body>
+</html>
