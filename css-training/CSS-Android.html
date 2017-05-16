@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    div{
+      margin: 0 auto 0 auto;
+    }
+    .head{
+      margin-top: 200px;
+      margin-bottom: -248px;
+      width: 0;
+      height: 0;
+      border-radius: 271px;
+      border-top: 271px solid #a6d854;
+      border-left: 271px solid #a6d854;
+      border-right:271px solid transparent;
+      border-bottom: 271px solid transparent;
+      transform: rotate(45deg);
+
+    }
+    .head:before{
+      display: block;
+      content: "";
+      background-color: #ffffff;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      position: relative;
+      top: -29px;
+      right: 196px;
+    }
+    .head:after{
+      display: block;
+      content: "";
+      background-color: #ffffff;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      position: relative;
+      top: -1041px;
+      left: -29px;
+    }
+    .right-antenna{
+      /*height: 113px;*/
+      width: 18px;
+      position: relative;
+      top: -319px;
+      right: 181px;
+      background-color: #a6d854;
+      transform: rotate(-255deg);
+      border-radius: 9px;
+    }
+    .left-antenna{
+      width: 18px;
+      position: relative;
+      top: -818px;
+      left: -85px;
+      background-color: #a6d854;
+      transform: rotate(-195deg);
+      border-radius: 9px;
+    }
+    .body{
+      width: 542px;
+      height: 457px;
+      background-color: #a6d854;;
+      border-bottom-left-radius: 55px;
+      border-bottom-right-radius: 55px;
+    }
+    span{
+      background-color: #a6d854;
+      height: 402px;
+      width: 130px;
+      display: block;
+      border-radius: 130px;
+    }
+    .left-hand{
+      position: relative;
+      right: 154px;
+      top: -10px;
+    }
+    .right-hand{
+      position: relative;
+      bottom: 412px;
+      left: 566px;
+    }
+    .left-foot{
+      background-color: #a6d854;;
+      position: relative;
+      top: -537px;
+      left: 119px;
+    }
+    .right-foot{
+      background-color: #a6d854;;
+      position: relative;
+      top: -939px;
+      left: 339px;
+    }
+    .left-hand:hover{
+      transition-property: all;
+      transition-duration: 1s;
+      transition-delay: 2s;
+      transition-timing-function: ease;
+      background-color: #009cda;
+      transform: rotate(40deg);
+    }
+  </style>
+</head>
+<body>
+<div class="head"><span class="right-antenna"></span><span class="left-antenna"></span></div>
+<div class="body"><span class="left-hand"></span><span class="right-hand"></span><span class="left-foot"></span><span class="right-foot"></span>
+</div>
+</body>
+</html>

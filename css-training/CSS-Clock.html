@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pure-CSS-Clock</title>
+  <style>
+    @keyframes clock-hand {
+      0 %{ transform: rotate(0deg)}
+      /*10 %{ transform: rotate(36deg)}*/
+      /*25 %{ transform: rotate(90deg)}*/
+      /*35 %{ transform: rotate(126deg)}*/
+      /*50%{ transform: rotate(180deg)}*/
+      /*60%{ transform: rotate(216deg)}*/
+      /*75 %{ transform: rotate(270deg)}*/
+      100% { transform: rotate(360deg)}
+    }
+    .dial{
+      width: 200px;
+      height: 200px;
+      background-color: #1e1e1f;
+      margin: 200px auto 0;
+      border-radius: 30px;
+    }
+    .dial:before{
+      display: block;
+      content: "";
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: #f3f3f6;
+      position: relative;
+      top: 5%;
+      right: -5%;
+
+    }
+    .second{
+      width: 4px;
+      height: 0;
+      border-top: 80px solid #f7242b;
+      border-bottom: 80px solid transparent;
+      /* box-shadow: 2px 2px 2px 2px #cf2d27; */
+      position: relative;
+      bottom: 352px;
+      left: 98px;
+      border-radius: 10px;
+      animation: 60s clock-hand infinite ;
+      z-index: 999;
+      /*transform: rotate(60deg);*/
+    }
+    .second:before{
+      display: block;
+      content: "";
+      width: 8px;
+      height: 8px;
+      background-color: #f7242b;
+      border-radius: 50%;
+      position: relative;
+      top: -4px;
+      right: 2px;
+    }
+    .second:after{
+      display: block;
+      content: "";
+      width: 4px;
+      height: 10px;
+      background-color: #f7242b;
+      /* border-radius: 50%; */
+      position: relative;
+      top: -5px;
+      /* right: 0px; */
+    }
+    .minute{
+      width: 8px;
+      height: 0;
+      border-top: 80px solid #1e1e1f;
+      border-bottom: 80px solid transparent;
+      /* box-shadow: 2px 2px 2px 2px #cf2d27; */
+      position: relative;
+      bottom: 512px;
+      left: 96px;
+      border-radius: 10px;
+      /*transform: rotate(90deg);*/
+      animation: 3600s clock-hand infinite;
+    }
+    .minute:before{
+      display: block;
+      content: "";
+      width: 16px;
+      height: 16px;
+      background-color: #1e1e1f;
+      border-radius: 50%;
+      position: relative;
+      top: -8px;
+      right: 4px;
+    }
+    .hour{
+      width: 7px;
+      height: 0;
+      border-top: 60px solid #1e1e1f;
+      border-bottom: 60px solid transparent;
+      /* box-shadow: 2px 2px 2px 2px #cf2d27; */
+      position: relative;
+      bottom: 652px;
+      left: 97px;
+      border-radius: 10px;
+      /* transform: rotate(90deg); */
+      animation: 43200s clock-hand infinite steps(60);
+    }
+    .hour:before{
+      display: block;
+      content: "";
+      width: 16px;
+      height: 16px;
+      background-color: #1e1e1f;
+      border-radius: 50%;
+      position: relative;
+      top: -8px;
+      right: 4px;
+    }
+    li:nth-child(1){
+      position: relative;
+      top: -166px;
+      right: -101px;
+    }
+    li:nth-child(2){
+      position: relative;
+      top: -151px;
+      right: -129px;
+    }
+    li:nth-child(3){
+      position: relative;
+      top: -128px;
+      right: -140px;
+    }
+    li:nth-child(4){
+      position: relative;
+      top: -102px;
+      right: -130px;
+    }
+    li:nth-child(5){
+      position: relative;
+      top: -88px;
+      right: -101px;
+    }
+    li:nth-child(6){
+      position: relative;
+      top: -93px;
+      right: -70px;
+    }
+    li:nth-child(7){
+      position: relative;
+      top: -118px;
+      right: -31px;
+    }
+    li:nth-child(8){
+      position: relative;
+      top: -158px;
+      right: -2px;
+
+    }
+    li:nth-child(9){
+      position: relative;
+      top: -212px;
+      right: 10px;
+
+    }
+    li:nth-child(10){
+      position: relative;
+      top: -260px;
+      right: -6px;
+
+    }
+    li:nth-child(11){
+      position: relative;
+      top: -302px;
+      right: -34px;
+
+    }
+    li:nth-child(12){
+      position: relative;
+      top: -332px;
+      right: -71px;
+    }
+    p{
+      margin-top: -600px;
+    }
+  </style>
+</head>
+<body>
+<div class="dial">
+  <ol>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ol>
+  <div class="second"></div>
+  <div class="minute"></div>
+  <div class="hour"></div>
+  <p>这是一个纯Css时钟,包括刻度也是Css实现,由于不使用JS,它不能和真实时间同步.美中不足的是它的数字刻度不十分精确.</p>
+</div>
+</body>
+</html>
